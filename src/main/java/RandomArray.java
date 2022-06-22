@@ -1,23 +1,25 @@
+import org.apache.commons.lang3.RandomUtils;
+
 import java.util.Arrays;
+import java.util.Random;
 
-public class RandomArray {
-    public static void main(String[] args) {
-        int numberPositve = 0;
-        int[] array = new int[100];
-        for (int i = 0; i < array.length; i++) {
+public class Array {
+ int size;
 
-            array[i] = (int) Math.round((Math.random() * (200 + 1) - 100));
-        }
+ public Array(int size) {
+  this.size = size;
+ }
 
 
-        for (int number : array) {
-            if (number % 2 != 0 && number > 0) {
-                numberPositve++;
+ public  int[] getRandomArray(int size) {
 
-            }
-        }
-        System.out.println(Arrays.toString(array));
-        System.out.println("Kоличество положительных нечетных чисел в этом массиве " + numberPositve);
-
-    }
+  int[] array = new int[size];
+  for (int i = 0; i < array.length; i++) {
+   array[i] = (int) Math.round((Math.random() * (200 + 1) - 100));
+  }
+  System.out.println(Arrays.toString(array));
+  return array;
+ }
 }
+
+
